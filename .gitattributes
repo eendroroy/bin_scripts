@@ -1,4 +1,5 @@
 * filter=git-crypt diff=git-crypt
 .gitattributes !filter !diff
+autoclickbot !filter !diff
 README.md !filter !diff
 .gitignore !filter !diff
