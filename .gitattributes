@@ -1,6 +1,11 @@
 * filter=git-crypt diff=git-crypt
 .gitattributes !filter !diff
-autoclickbot !filter !diff
 README.md !filter !diff
 .gitignore !filter !diff
 
+autoclickbot !filter !diff
+apt_update !filter !diff
+annonymous_git_setup !filter !diff
+brewer !filter !diff
+global_git_setup !filter !diff
+print_colors !filter !diff
