@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[[ "`uname`" != 'Linux' ]] && echo 'Only support Linux distros' && exit 1
+
 clear
 printf "Checking dependency...\n"
 XDOTOOL_INSTALLED=$(dpkg-query -W -f='${Status}' xdotool 2>/dev/null | grep -c "ok installed")
