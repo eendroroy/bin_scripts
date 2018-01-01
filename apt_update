@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-sudo apt-get update -y
-sudo apt-get upgrade -y
-sudo apt-get dist-upgrade -y
-
+echo -e "    ==> updating cache ..."
+sleep .5
+awk '{printf("%c[2K", 27);printf("%s\r", $0)}' <(sudo apt-get update -y)
+echo -e "    ==> running dist-upgrade ..."
+sleep .5
+awk '{printf("%c[2K", 27);printf("%s\r", $0)}' <(sudo apt-get dist-upgrade -y)
