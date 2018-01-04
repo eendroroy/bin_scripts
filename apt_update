@@ -1,15 +1,22 @@
 #!/usr/bin/env bash
 
-echo -e "    ==> updating cache ..."
+COLOR='\033[1;92m'
+IGN_COLOR='\033[1;90m'
+NC='\033[0m'
+echo -e "${COLOR}    ----> updating cache ...${NC}${IGN_COLOR}"
 sleep .5
 awk '{printf("%c[2K", 27);printf("%s\r", $0)}' <(sudo apt-get update -y)
-echo -e "    ==> running dist-upgrade ..."
+echo
+echo -e "${COLOR}    ----> running dist-upgrade ...${NC}${IGN_COLOR}"
 sleep .5
 awk '{printf("%c[2K", 27);printf("%s\r", $0)}' <(sudo apt-get dist-upgrade -y)
-echo -e "    ==> removing unnecessary packages..."
+echo
+echo -e "${COLOR}    ----> removing unnecessary packages...${NC}${IGN_COLOR}"
 sleep .5
 awk '{printf("%c[2K", 27);printf("%s\r", $0)}' <(sudo apt-get autoremove -y)
-echo -e "    ==> cleaningup ..."
+echo
+echo -e "${COLOR}    ----> cleaningup ...${NC}${IGN_COLOR}"
 sleep .5
 awk '{printf("%c[2K", 27);printf("%s\r", $0)}' <(sudo apt-get autoclean -y)
+echo -e "${NC}"
 
