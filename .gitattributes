@@ -9,3 +9,4 @@ annonymous_git_setup !filter !diff
 brewer !filter !diff
 global_git_setup !filter !diff
 print_colors !filter !diff
+print_colors_256 !filter !diff
