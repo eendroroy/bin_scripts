@@ -20,3 +20,5 @@ sleep .5
 awk '{printf("%c[2K", 27);printf("%s\r", $0)}' <(sudo apt-get autoclean -y)
 echo -e "${NC}"
 
+unset COLOR NC IGN_COLOR
+
