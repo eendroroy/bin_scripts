@@ -1,6 +1,7 @@
 * filter=git-crypt diff=git-crypt
 .gitattributes !filter !diff
 README.md !filter !diff
+LICENSE !filter !diff
 .gitignore !filter !diff
 install !filter !diff
 public/print_colors !filter !diff
