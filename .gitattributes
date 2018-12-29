@@ -3,4 +3,5 @@
 README.md !filter !diff
 .gitignore !filter !diff
 install !filter !diff
-public/* !filter !diff
+public/print_colors !filter !diff
+public/print_colors_256 !filter !diff
