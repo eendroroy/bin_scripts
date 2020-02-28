@@ -6,3 +6,5 @@ LICENSE !filter !diff
 install !filter !diff
 public/print_colors !filter !diff
 public/print_colors_256 !filter !diff
+public/tmux-cssh !filter !diff
+
