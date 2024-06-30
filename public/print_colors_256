@@ -1,17 +1,56 @@
 #!/usr/bin/env bash
 
-for i in {0..15} ; do
-  printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
-  if (( (i+1) % 8 == 0 )); then
-    printf "\n";
-  fi
-done
+function __print_colors {
+  for i in {0..15} ; do
+    $FG && printf "\e[38;5;%sm%3d\e[0m " "$i" "$i"
+    $BG && printf "\e[48;5;%sm%3d\e[0m " "$i" "$i"
+  done
 
-echo
+  echo
+  echo
 
-for i in {16..255} ; do
-  printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
-  if (( (i-15) % 6 == 0 )); then
-    printf "\n";
-  fi
+  for i in {16..231} ; do
+    $FG && printf "\e[38;5;%sm%3d\e[0m " "$i" "$i"
+    $BG && printf "\e[48;5;%sm%3d\e[0m " "$i" "$i"
+    if (( (i-15) % 6 == 0 )); then
+      printf "\n";
+    fi
+  done
+
+  echo
+  echo
+
+  for i in {232..243} ; do
+    $FG && printf "\e[38;5;%sm%3d\e[0m " "$i" "$i"
+    $BG && printf "\e[48;5;%sm%3d\e[0m " "$i" "$i"
+  done
+
+  echo
+
+  for i in {244..255} ; do
+    $FG && printf "\e[38;5;%sm%3d\e[0m " "$i" "$i"
+    $BG && printf "\e[48;5;%sm%3d\e[0m " "$i" "$i"
+  done
+
+  echo
+}
+
+while getopts ":bf" option; do
+  case $option in
+    f) # normal
+      BG=false
+      FG=true
+      __print_colors
+      exit ;;
+    b) # background
+      BG=true
+      FG=false
+      __print_colors
+      exit ;;
+    \?) # Invalid option
+      BG=true
+      FG=false
+      __print_colors
+      exit ;;
+  esac
 done
